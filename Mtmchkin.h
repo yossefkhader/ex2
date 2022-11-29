@@ -60,8 +60,9 @@ public:
     //TODO: complete the Mtmchkin class.
 
 private:
-    //TODO: complete the Mtmchkin class.
-
+    std::string playerName;
+    Card* cardsArray;
+    int size;    
 };
 
 
