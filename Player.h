@@ -10,13 +10,15 @@ const int DEF_FORCE = 5;
 class Player
 {
 private:
-    std::String m_name;
-    int m_level = 1, m_force, m_hp, m_MAXHP, m_coins = 0;
+    std::string m_playerName; //
+    int m_level = 1;     
+    int m_force; 
+    int m_hp;
+    int m_MAXHP;
+    int m_coins = 0;
 public:
-    // player(const char* name);
-    // Player(const char* name, int force=DEF_FORCE);
     Player(const char* name, int force=DEF_FORCE, int hp=DEF_MAXHP);
-    ~Player();
+    ~Player() =default;
     Player(const Player& p);
     Player& operator=(const Player& p);
     void levelUp();

@@ -3,7 +3,7 @@
 Player::Player(const char* name, int force=DEF_FORCE, 
                int hp=DEF_MAXHP)
 {
-    this->m_name = name;
+    this->m_playerName = name;
  
     if(force < 0)
     {
@@ -19,27 +19,13 @@ Player::Player(const char* name, int force=DEF_FORCE,
     this->m_hp = this->m_MAXHP;
 }
 
-Player::~Player()
-{
-    delete[] m_name;
-}
-
-Player::Player(const Player& p) :
-    m_level(p.m_level),
-    m_force(p.m_force),
-    m_MAXHP(p.m_MAXHP),
-    m_hp(p.m_hp) 
-{
-    this->m_name =p.m_name;
-}
-
 Player& Player::operator=(const Player& p)
 {
     if(this == &p)
     {
         return *this;
     }
-    m_name = p.m_name;
+
     m_level = p.m_level;
     m_force = p.m_force;
     m_MAXHP = p.m_MAXHP;
