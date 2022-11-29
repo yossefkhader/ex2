@@ -46,5 +46,20 @@ void Card::applyEncounter(Player& player) const
 }
 void Card::printInfo() const
 {
-    
+  if(this->m_effect == CardType::Heal)
+  {
+     printHealCardInfo(m_stats);
+  } 
+  if(this->m_effect == CardType::Buff)
+  {
+    printBuffCardInfo(m_stats);
+  } 
+  if(this->m_effect == CardType::Battle)
+  {
+    printBattleCardInfo(m_stats);
+  }
+  if(this->m_effect == CardType::Treasure)
+  {
+   printTreasureCardInfo(m_stats);
+  }
 }
