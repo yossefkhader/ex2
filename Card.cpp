@@ -44,22 +44,28 @@ void Card::applyEncounter(Player& player) const
     player.addCoins(this->m_stats.loot);
   }
 }
+
 void Card::printInfo() const
 {
-  if(this->m_effect == CardType::Heal)
+  
+  switch (this->m_effect)
   {
-     printHealCardInfo(m_stats);
-  } 
-  if(this->m_effect == CardType::Buff)
-  {
+  case CardType::Heal:
+    printHealCardInfo(m_stats);
+    break;
+  
+  case CardType::Buff:
     printBuffCardInfo(m_stats);
-  } 
-  if(this->m_effect == CardType::Battle)
-  {
+    break;
+
+  case CardType::Battle:
     printBattleCardInfo(m_stats);
+    break;
+
+  case CardType::Treasure:
+    printTreasureCardInfo(m_stats);
+    break;
   }
-  if(this->m_effect == CardType::Treasure)
-  {
-   printTreasureCardInfo(m_stats);
-  }
+  
+  return;
 }
