@@ -74,7 +74,7 @@ void Player::heal(int num)
     return;
 }
 
-void Player::damgae(int num)
+void Player::damage(int num)
 {
     if(num<0)
     {
@@ -122,7 +122,7 @@ bool Player::pay(int num)
     return true;
 }
 
-int Player::getAttackStregth() const
+int Player::getAttackStrength() const
 {
     return this->m_force + this->m_level;
 }

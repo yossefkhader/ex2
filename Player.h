@@ -25,11 +25,11 @@ public:
     int getLevel() const; 
     void buff(int num);
     void heal(int num);
-    void damgae(int num);
+    void damage(int num);
     bool isKnockedOut() const;
     void addCoins(int num);
     bool pay(int num);
-    int getAttackStregth() const;
+    int getAttackStrength() const;
 
 };
 
