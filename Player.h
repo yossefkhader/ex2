@@ -2,6 +2,7 @@
 #define __PLAYER__H__
 
 #include <string>
+#include "utilities.h"
 
 const int MAX_LEVEL = 10;
 const int DEF_MAXHP = 100;
@@ -17,6 +18,7 @@ private:
     int m_MAXHP;
     int m_coins = 0;
 public:
+    Player() = default;
     Player(const char* name, int force=DEF_FORCE, int hp=DEF_MAXHP);
     ~Player() =default;
     Player(const Player& p);
@@ -30,6 +32,7 @@ public:
     void addCoins(int num);
     bool pay(int num);
     int getAttackStrength() const;
+    void printInfo() const;
 
 };
 

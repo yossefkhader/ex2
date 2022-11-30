@@ -1,7 +1,6 @@
 #include "Player.h"
 
-Player::Player(const char* name, int force=DEF_FORCE, 
-               int hp=DEF_MAXHP)
+Player::Player(const char* name, int force=DEF_FORCE, int hp=DEF_MAXHP)
 {
     this->m_playerName = name;
  
@@ -125,4 +124,10 @@ bool Player::pay(int num)
 int Player::getAttackStrength() const
 {
     return this->m_force + this->m_level;
+}
+
+void Player::printInfo() const
+{
+    printPlayerInfo(this->m_playerName.c_str(), this->m_level, this->m_force, this->m_hp, this->m_coins);
+    return;
 }

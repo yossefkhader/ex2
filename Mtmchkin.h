@@ -60,9 +60,10 @@ public:
     //TODO: complete the Mtmchkin class.
 
 private:
-    std::string playerName;
+    Player player;
     Card* cardsArray;
     int size;    
+    int currCard = 0;
 };
 
 
