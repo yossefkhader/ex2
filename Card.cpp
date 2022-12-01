@@ -32,12 +32,11 @@ void Card::applyEncounter(Player& player) const
     {
         player.addCoins(this->m_stats.loot);
         player.levelUp();
-        player.buff(m_stats.buff);
         printBattleResult(true);
     }
     else
     {
-      player.damage(this->m_stats.force);
+      player.damage(this->m_stats.hpLossOnDefeat);
       printBattleResult(false);
     }
   }

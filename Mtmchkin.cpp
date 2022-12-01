@@ -46,7 +46,7 @@ bool Mtmchkin::isOver() const
 
 GameStatus Mtmchkin::getGameStatus() const
 {
-    if(!isOver())
+    if(isOver())
     {
         if(this->player.isKnockedOut())
         {
