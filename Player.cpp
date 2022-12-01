@@ -46,22 +46,6 @@ Player::Player(const char* name, int hp, int force)
 
 }
 
-Player& Player::operator=(const Player& p)
-{
-    if(this == &p)
-    {
-        return *this;
-    }
-
-    m_playerName = p.m_playerName;
-    m_level = p.m_level;
-    m_force = p.m_force;
-    m_MAXHP = p.m_MAXHP;
-    m_hp = p.m_hp;
-
-    return *this;
-}
-
 void Player::levelUp()
 {
     if(this->m_level == MAX_LEVEL){
@@ -155,13 +139,8 @@ int Player::getAttackStrength() const
     return this->m_force + this->m_level;
 }
 
-void Player::printInfo() const
+void Player::printInfo()
 {
     printPlayerInfo(this->m_playerName.c_str(), this->m_level, this->m_force, this->m_hp, this->m_coins);
     return;
-}
-
-void Player::printName() const
-{
-    printf("classsssssssssssssss : %s" ,this->m_playerName.c_str());
 }

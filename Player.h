@@ -23,8 +23,8 @@ public:
     Player(const char* name, int hp);
     Player(const char* name, int hp,int force);
     ~Player() = default;
-    Player(const Player& p);
-    Player& operator=(const Player& p);
+    Player(Player const&) = default;
+    Player& operator=(Player const&) = default;
     void levelUp();
     int getLevel() const; 
     void buff(int num);
@@ -34,8 +34,7 @@ public:
     void addCoins(int num);
     bool pay(int num);
     int getAttackStrength() const;
-    void printInfo() const;
-    void printName() const;
+    void printInfo();
 
 };
 
