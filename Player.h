@@ -11,7 +11,7 @@ const int DEF_FORCE = 5;
 class Player
 {
 private:
-    std::string m_playerName; //
+    std::string m_playerName;
     int m_level = 1;     
     int m_force; 
     int m_hp;
@@ -19,8 +19,10 @@ private:
     int m_coins = 0;
 public:
     Player() = default;
-    Player(const char* name, int force=DEF_FORCE, int hp=DEF_MAXHP);
-    ~Player() =default;
+    Player(const char* name);
+    Player(const char* name, int hp);
+    Player(const char* name, int hp,int force);
+    ~Player() = default;
     Player(const Player& p);
     Player& operator=(const Player& p);
     void levelUp();
@@ -33,6 +35,7 @@ public:
     bool pay(int num);
     int getAttackStrength() const;
     void printInfo() const;
+    void printName() const;
 
 };
 

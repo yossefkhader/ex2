@@ -13,6 +13,11 @@ Mtmchkin::Mtmchkin(const char* playerName, const Card* cardsArray, int numOfCard
 
 }
 
+Mtmchkin::~Mtmchkin()
+{
+    delete[] cardsArray;
+}
+
 void Mtmchkin::playNextCard()
 {
     this->cardsArray[this->currCard].printInfo();

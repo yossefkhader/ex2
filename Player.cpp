@@ -1,21 +1,49 @@
 #include "Player.h"
 
-Player::Player(const char* name, int force=DEF_FORCE, int hp=DEF_MAXHP)
+Player::Player(const char* name)
 {
-    this->m_playerName = name;
+    std::string str(name);
+    this->m_playerName = str;
+    this->m_force = DEF_FORCE; 
+    this->m_MAXHP = DEF_MAXHP;
+    this->m_hp = this->m_MAXHP;
+}
+
+Player::Player(const char* name, int hp)
+{
+    std::string str(name);
+    this->m_playerName = str;
  
-    if(force < 0)
-    {
-        force=DEF_FORCE;
-    }
-    this->m_force = force; 
-    
     if(hp < 0)
     {
         hp=DEF_MAXHP;
     }
     this->m_MAXHP = hp;
     this->m_hp = this->m_MAXHP;
+
+    this->m_force = DEF_FORCE; 
+}
+
+
+Player::Player(const char* name, int hp, int force)
+{
+    std::string str(name);
+    this->m_playerName = str;
+ 
+    if(hp < 0)
+    {
+        hp=DEF_MAXHP;
+    }
+    this->m_MAXHP = hp;
+    this->m_hp = this->m_MAXHP;
+
+    if(force < 0)
+    {
+        force=DEF_FORCE;
+    }
+    this->m_force = force; 
+    
+
 }
 
 Player& Player::operator=(const Player& p)
@@ -25,6 +53,7 @@ Player& Player::operator=(const Player& p)
         return *this;
     }
 
+    m_playerName = p.m_playerName;
     m_level = p.m_level;
     m_force = p.m_force;
     m_MAXHP = p.m_MAXHP;
@@ -91,9 +120,9 @@ bool Player::isKnockedOut() const
 {
     if(this->m_hp ==0)
     {
-        return false;
+        return true;
     }
-    return true;
+    return false;
 }
 
 void Player::addCoins(int num)
@@ -130,4 +159,9 @@ void Player::printInfo() const
 {
     printPlayerInfo(this->m_playerName.c_str(), this->m_level, this->m_force, this->m_hp, this->m_coins);
     return;
+}
+
+void Player::printName() const
+{
+    printf("classsssssssssssssss : %s" ,this->m_playerName.c_str());
 }
