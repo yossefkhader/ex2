@@ -15,16 +15,14 @@ private:
     int m_level = 1;     
     int m_force; 
     int m_hp;
-    int m_MAXHP;
+    const int m_MAXHP;
     int m_coins = 0;
+
 public:
-    Player() = default;
-    Player(const char* name);
-    Player(const char* name, int hp);
-    Player(const char* name, int hp,int force);
+    Player(const char* name = "", int hp = DEF_MAXHP, int force = DEF_FORCE);
     ~Player() = default;
-    Player(Player const&) = default;
-    Player& operator=(Player const&) = default;
+    Player(Player const&) =default;
+    Player& operator=(Player const&) =default;
     void levelUp();
     int getLevel() const; 
     void buff(int num);
