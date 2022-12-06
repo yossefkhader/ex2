@@ -1,12 +1,13 @@
 #include "Player.h"
 
-Player::Player(const char* name = "", int hp = DEF_MAXHP, int force = DEF_FORCE):
-    m_MAXHP(hp<0 ? DEF_MAXHP : hp)
+/// @brief 
+Player::Player(const char* name = "", int hp = DEF_MAXHP, int force = DEF_FORCE)
 {
     std::string str(name);
     this->m_playerName = str;
+    this->m_MAXHP = hp < 0 ? DEF_MAXHP : hp;
     this->m_hp = this->m_MAXHP;
-    this->m_force = force < 0 ? DEF_FORCE : force; 
+    this->m_force = force < 0 ? DEF_FORCE : force;
 }
 
 void Player::levelUp()
@@ -41,7 +42,9 @@ void Player::heal(int num)
     {
         return;
     }
+    
     this->m_hp += num;
+    
     if(this->m_hp > this->m_MAXHP)
     {
         this->m_hp = this->m_MAXHP;
