@@ -63,6 +63,7 @@ public:
     // TODO: complete the Mtmchkin class.
 
 private:
+    GameStatus m_gameStatus;
     Player m_player;
     Card *m_cardsArray;
     int m_size;

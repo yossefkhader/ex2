@@ -12,13 +12,14 @@ class Player
 {
 private:
     std::string m_playerName;
-    int m_level = 1;     
+    int m_level;     
     int m_force; 
     int m_hp;
     int m_MAXHP;
     int m_coins = 0;
 
 public:
+    
     Player(const char* name = "", int hp = DEF_MAXHP, int force = DEF_FORCE);
     ~Player() = default;
     Player(Player const& p) =default;
