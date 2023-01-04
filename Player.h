@@ -11,8 +11,8 @@ const int DEF_FORCE = 5;
 class Player
 {
 private:
-    std::string m_playerName;
-    int m_level;     
+    std::string m_playerName;   
+    int m_level = 1;     
     int m_force; 
     int m_hp;
     int m_MAXHP;

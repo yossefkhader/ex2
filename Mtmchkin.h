@@ -60,14 +60,13 @@ public:
      */
     GameStatus getGameStatus() const;
 
-    // TODO: complete the Mtmchkin class.
 
 private:
-    GameStatus m_gameStatus;
-    Player m_player;
-    Card *m_cardsArray;
-    int m_size;
-    int m_currCard = 0;
+    GameStatus m_gameStatus;    //saves the current game status
+    Player m_player;            //the playe that take part in the game
+    Card *m_cardsArray;         //the cards we use in the game
+    int m_size;                 //the size of the array
+    int m_currCard = 0;         //the index of the current card
 };
 
 #endif // EX2_GAME_H

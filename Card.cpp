@@ -6,7 +6,7 @@ Card::Card(CardType type, const CardStats& stats)
     this->m_stats = stats;
 }    
 
-void Card::applyEncounter(Player& player) const
+void Card::applyEncounter(Player& player) const // This function apply the suitable thing to the player according to the card type
 {
   if(this->m_effect == CardType::Heal)
   {
@@ -46,7 +46,7 @@ void Card::applyEncounter(Player& player) const
   }
 }
 
-void Card::printInfo() const
+void Card::printInfo() const // This function print the card info acording to hear type
 {
   
   switch (this->m_effect)

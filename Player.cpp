@@ -1,9 +1,8 @@
 #include "Player.h"
 
-/// @brief 
-Player::Player(const char* name = "", int hp = DEF_MAXHP, int force = DEF_FORCE)
+Player::Player(const char* name, int hp, int force)
 {
-    std::string str(name);
+    std::string str(name);  //used for converting from char* to string
     this->m_playerName = str;
     this->m_MAXHP = hp < 0 ? DEF_MAXHP : hp;
     this->m_hp = this->m_MAXHP;
@@ -54,12 +53,14 @@ void Player::heal(int num)
 
 void Player::damage(int num)
 {
-    if(num<0)
+    if(num < 0)
     {
         num=0;
     }
+    
     this->m_hp -= num;
-    if(this->m_hp <0)
+    
+    if(this->m_hp < 0)
     {
         this->m_hp = 0;
     }
@@ -68,7 +69,7 @@ void Player::damage(int num)
 
 bool Player::isKnockedOut() const
 {
-    if(this->m_hp ==0)
+    if(this->m_hp == 0)
     {
         return true;
     }
@@ -77,9 +78,9 @@ bool Player::isKnockedOut() const
 
 void Player::addCoins(int num)
 {
-    if(num<0)
+    if(num < 0)
     {
-        num=0;
+        num = 0;
     }
     this->m_coins += num;
     return;
